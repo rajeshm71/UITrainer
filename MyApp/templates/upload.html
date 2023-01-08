@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>CNN Image Classification</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+  <h1>CNN Image Classification System Tester for Inception Model V3</h1>
+    <div class="folder-selector">
+      <form method="POST" enctype="multipart/form-data">
+        <div class="input-container">
+            <h3>Transfer Learning</h3>
+            <label for="getFile">Drop Folder Below to Transfer Learn</label><br>
+            <input type='file' id="getFile" name="files"  accept="image/*" webkitdirectory directory /><br><br>
+        <input type="submit" name="start_training" value="Start Training" />
+            {% for message in get_flashed_messages() %}
+            <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        </div>
+      </form>
+    </div>
+
+  <hr style="border: 1px dashed orange; margin: 30px 100px 0px 100px;">
+  <hr style="border: 1px dashed orange; margin: 10px 100px 0px 100px;">
+  <br>
+  <br>
+  <div class="folder-selector">
+      <form method="POST" enctype="multipart/form-data">
+        <div class="input-container">
+            <h2>Make Predictions</h2>
+             <label for="predictfile">Drop Images Below to Identify</label><br>
+        <input type="file" id="predictfile" name="files"  accept="image/*" multiple/><br><br>
+            <div class="checkbox-container">
+        <input type="radio" id="checkbox1" name="checkbox" value="Original Inception V3 Model" checked>
+        <label for="checkbox1">Original Inception V3 Model</label>
+        </div>
+        <div class="checkbox-container">
+        <input type="radio" id="checkbox2" name="checkbox" value="Trained Inception V3 Model">
+        <label for="checkbox2">Trained Inception V3 Model"</label>
+        </div><br><br>
+        <input type="submit" name="predict" value="Predict" />
+            <script>
+              {% if alert %}
+              alert("{{ alert }}");
+              {% endif %}
+            </script>
+        </div>
+      </form>
+    </div>
+  <br>
+  <br>
+  {% if predictions %}
+  <div class="table-container">
+    <table class="fixed_header-table">
+        <h4>Identification Results Popup – Tabulated</h4>
+      <thead>
+      <tr>
+        <th>Count</th>
+        <th>File Name</th>
+        <th>Prediction</th>
+        <th>Classification Probability</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for count, prediction, file_name, confidence in predictions %}
+      <tr class="prediction">
+        <td>{{ count }}</td>
+        <td>{{ prediction }}</td>
+        <td>{{ file_name }}</td>
+        <td>{{ confidence }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  <table class="image-class">
+      <h5>Identification Results Popup – Image vs Result</h5>
+      <tbody>
+      {% for image_data_uri in image_data_uris %}
+      <tr class="image">
+      {% if loop.index % 2 == 1 %}
+          <td><img src="{{ image_data_uri }}" alt="image" width="200" height="200"></td>
+          {% if loop.index < image_data_uris|length %}
+              <td><img src="{{ image_data_uris[loop.index] }}" alt="image" width="200" height="200"></td>
+
+          {% endif %}
+      {% endif %}
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+      </div>
+  {% endif %}
+  </body>
+</html>

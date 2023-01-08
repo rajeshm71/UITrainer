@@ -1,0 +1,211 @@
+title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FF4500;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  margin: 0px 270px 0px 0; /* top, right, bottom, left */
+}
+
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin: 0px 0px 0px 140px; /* top, right, bottom, left */
+}
+
+form {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: inline-block;
+  font-size: 16px;
+  /*width: 50%;*/
+  padding: 12px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  width: 300px; /* Increase the width of the file input element */
+  height: 50px; /* Increase the height of the file input element */
+}
+
+input[type="submit"] {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+/* flash message style */
+.flash-message {
+  background-color: #00BB00;
+  border: 1px solid #b0c4de;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* flash message hover effect */
+.flash-message:hover {
+  background-color: #46a049;
+  cursor: pointer;
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-container input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 5px;
+}
+
+.checkbox-container label:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.checkbox-container input[type="radio"]:checked + label:before {
+  content: "\2022";
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  line-height: 22px;
+}
+
+
+.input-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+
+.fixed_header-table {
+
+  display: inline-block;
+  /*table-layout: fixed; /* Specify that the width of the table and its cells should be fixed */
+  overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+  height: 400px; /* gives an initial height of 200px to the table */
+  float: right;
+  margin: 30px 100px 0px 0px; /* top, right, bottom, left */
+}
+
+
+.fixed_header-table thead tbody{
+  display: inline-block;
+}
+
+table {
+  border-collapse: collapse;
+}
+/* Add a border to the table cells */
+.fixed_header-table th, td{
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the table headings */
+th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.fixed_header-table thead th{
+  position: sticky; /* make the table heads sticky */
+  top: 0; /* table head will be placed from the top of the table and sticks to it */
+
+}
+
+
+
+/* Add hover effect to the table rows */
+tr:hover {
+  background-color: lightyellow;
+}
+
+.image-class {
+
+  display: inline-block;
+  overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+  height: 400px; /* gives an initial height of 200px to the table */
+  /*float: right;*/
+  margin: 10px 0px 10px 100px; /* top, right, bottom, left */
+  border-collapse: separate;
+  border-spacing: 10px 10px; /* add a space of 10px between cells */
+}
+
+.image-class table {
+  display: inline-block;
+}
+
+}
+/* Add a border to the table cells */
+.image-class td{
+  border: 2px solid black;
+  padding: 0px;
+}
+
+/* Add hover effect to the table rows */
+.image-class td:hover {
+  background-color: lightyellow;
+}
+
+
+
